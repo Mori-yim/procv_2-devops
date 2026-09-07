@@ -17,7 +17,7 @@ RUN mvn -B clean package -DskipTests
 # ============================================================
 # Stage 2 — Healthcheck utility
 # ============================================================
-FROM busybox:1.36-musl AS busybox
+FROM busybox:1.38-musl AS busybox
 
 
 # ============================================================
