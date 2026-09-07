@@ -1,0 +1,11 @@
+.git
+.github
+.idea
+.vscode
+.env
+.env.*
+*.log
+backend/target
+frontend/node_modules
+frontend/dist
+trivy-*.json
