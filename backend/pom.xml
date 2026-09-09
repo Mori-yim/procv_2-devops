@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -16,8 +16,9 @@
     <version>1.0.0</version>
     <name>procv-backend</name>
     <description>API backend de ProCV - SaaS de generation de CV professionnels</description>
-
     <properties>
+        <tomcat.version>10.1.59</tomcat.version>
+        <tomcat.version>10.1.59</tomcat.version>
         <java.version>17</java.version>
         <jjwt.version>0.12.5</jjwt.version>
     </properties>
@@ -114,3 +115,6 @@
         </plugins>
     </build>
 </project>
+
+
+
