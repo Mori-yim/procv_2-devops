@@ -23,7 +23,7 @@ COPY . .
 RUN npm run build
 
 
-FROM nginx:1.31.4-alpine3.24-slim
+FROM nginx:1.31.5-alpine3.24-slim
 RUN apk upgrade --no-cache
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
