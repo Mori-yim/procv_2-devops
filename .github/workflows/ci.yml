@@ -19,7 +19,7 @@ concurrency:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAMESPACE: ghcr.io/mori-yim/procv-devops
+  IMAGE_NAMESPACE: ghcr.io/mori-yim/procv_2-devops
 
 jobs:
   backend-test:
