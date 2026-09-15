@@ -1,4 +1,4 @@
-﻿name: ProCV CI/CD
+name: ProCV CI/CD
 
 on:
   push:
@@ -161,5 +161,4 @@ jobs:
           PATH_ON_SERVER: ${{ secrets.PRODUCTION_PATH }}
           VERSION: ${{ github.ref_name }}
         run: |
-          ssh "$USER@$HOST" "cd '$PATH_ON_SERVER' && sed -i 's/^IMAGE_TAG=.*/IMAGE_TAG=${VERSION#v}/' .env.production && ./scripts/deploy-production.sh"
-
+          ssh "$USER@$HOST" "cd '$PATH_ON_SERVER' && PREVIOUS_TAG=\$(grep '^IMAGE_TAG=' .env.production | cut -d'=' -f2-) && sed -i 's/^IMAGE_TAG=.*/IMAGE_TAG=${VERSION#v}/' .env.production && PREVIOUS_TAG=\"\$PREVIOUS_TAG\" ./scripts/deploy-production.sh"

@@ -23,7 +23,7 @@ fi
 
 export COMPOSE_PROJECT_NAME="procv"
 
-CURRENT_TAG="$(grep '^IMAGE_TAG=' "$ENV_FILE" | cut -d'=' -f2- || true)"
+CURRENT_TAG="${PREVIOUS_TAG:-$(grep '^IMAGE_TAG=' "$ENV_FILE" | cut -d'=' -f2- || true)}"
 
 if [[ -z "$CURRENT_TAG" ]]; then
   CURRENT_TAG="latest"
