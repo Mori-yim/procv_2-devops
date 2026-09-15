@@ -34,7 +34,7 @@ jobs:
           cache: maven
       - name: Test
         working-directory: backend
-        run: mvn -B test
+        run: ./mvnw -B test
 
   frontend-build:
     name: Frontend build
