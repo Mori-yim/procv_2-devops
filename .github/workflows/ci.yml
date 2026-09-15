@@ -1,4 +1,4 @@
-name: ProCV CI/CD
+﻿name: ProCV CI/CD
 
 on:
   push:
@@ -48,6 +48,9 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
       - working-directory: frontend
         run: npm ci --no-audit --no-fund
+      - name: Frontend tests
+        working-directory: frontend
+        run: npm run test
       - working-directory: frontend
         run: npm run build
 
@@ -159,3 +162,4 @@ jobs:
           VERSION: ${{ github.ref_name }}
         run: |
           ssh "$USER@$HOST" "cd '$PATH_ON_SERVER' && sed -i 's/^IMAGE_TAG=.*/IMAGE_TAG=${VERSION#v}/' .env.production && ./scripts/deploy-production.sh"
+
